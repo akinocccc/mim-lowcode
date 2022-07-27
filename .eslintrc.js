@@ -1,16 +1,22 @@
 const { defineConfig } = require('eslint-define-config');
 
 module.exports = defineConfig({
+  env: {
+    browser: true,
+    node: true,
+    commonjs: true,
+    amd: true,
+  },
   root: true,
   /* 指定如何解析语法。*/
   parser: 'vue-eslint-parser',
   /* 优先级低于parse的语法解析配置 */
   parserOptions: {
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
   },
   // https://eslint.bootcss.com/docs/user-guide/configuring#specifying-globals
   globals: {
-    Nullable: true
+    Nullable: true,
   },
   extends: [
     // add more generic rulesets here, such as:
@@ -24,7 +30,7 @@ module.exports = defineConfig({
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended', // typescript-eslint推荐规则,
     'prettier',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
     // 'no-undef': 'off',
@@ -45,8 +51,8 @@ module.exports = defineConfig({
         baseIndent: 1,
         closeBracket: 0,
         alignAttributesVertically: true,
-        ignores: []
-      }
+        ignores: [],
+      },
     ],
     // 关闭此规则 使用 prettier 的格式化规则
     'vue/max-attributes-per-line': ['off'],
@@ -56,8 +62,9 @@ module.exports = defineConfig({
       'PascalCase',
       {
         registeredComponentsOnly: false,
-        ignores: []
-      }
-    ]
-  }
+        ignores: [],
+      },
+    ],
+    '@typescript-eslint/no-var-requires': 'off',
+  },
 });
