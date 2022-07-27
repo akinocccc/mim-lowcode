@@ -28,11 +28,9 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "**/*.{js,vue}": [
-        "eslint --fix",
-        "git add"
-      ]
-    }
+    "**/*.{ts,js,vue,jsx,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
