@@ -3,7 +3,7 @@
     "commit": "cz",
     "prepare": "husky install",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "lint": "eslint --fix --ext .js,.ts,.vue src",
+    "lint": "eslint --fix --ext .js,.ts,.vue client/src",
     "lint-staged": "lint-staged",
     "precommit": "lint-staged"
   },

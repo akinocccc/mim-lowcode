@@ -6,6 +6,6 @@ const store = createStore({
   state,
   mutations,
   actions,
-  modules: {}
+  modules: {},
 });
 export default store;

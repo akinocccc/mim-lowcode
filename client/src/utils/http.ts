@@ -29,14 +29,16 @@ axios.interceptors.request.use(
   (config: AxiosRequestConfig) => {
     const token = window.sessionStorage.getItem('token');
     if (token) {
-      // @ts-ignore
-      config.headers.token = token;
+      config.headers = {
+        ...config.headers,
+        token: token,
+      };
     }
     return config;
   },
   (error: Error) => {
     return error;
-  }
+  },
 );
 // 响应拦截
 axios.interceptors.response.use(
@@ -109,7 +111,7 @@ axios.interceptors.response.use(
     //处理结束
     //如果不需要错误处理，以上的处理过程都可省略
     return Promise.resolve(error.response);
-  }
+  },
 );
 
 const Http: Http = {
@@ -118,11 +120,11 @@ const Http: Http = {
       NProgress.start();
       axios
         .get(url, { params })
-        .then(res => {
+        .then((res) => {
           NProgress.done();
           resolve(res.data);
         })
-        .catch(err => {
+        .catch((err) => {
           NProgress.done();
           reject(err.data);
         });
@@ -133,11 +135,11 @@ const Http: Http = {
       NProgress.start();
       axios
         .post(url, JSON.stringify(params))
-        .then(res => {
+        .then((res) => {
           NProgress.done();
           resolve(res.data);
         })
-        .catch(err => {
+        .catch((err) => {
           NProgress.done();
           reject(err.data);
         });
@@ -148,13 +150,13 @@ const Http: Http = {
       NProgress.start();
       axios
         .post(url, file, {
-          headers: { 'Content-Type': 'multipart/form-data' }
+          headers: { 'Content-Type': 'multipart/form-data' },
         })
-        .then(res => {
+        .then((res) => {
           NProgress.done();
           resolve(res.data);
         })
-        .catch(err => {
+        .catch((err) => {
           NProgress.done();
           reject(err.data);
         });
@@ -168,7 +170,7 @@ const Http: Http = {
       document.body.removeChild(iframe);
     };
     document.body.appendChild(iframe);
-  }
+  },
 };
 
 export default Http;
