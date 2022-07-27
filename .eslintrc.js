@@ -45,7 +45,7 @@ module.exports = defineConfig({
     '@typescript-eslint/no-unused-vars': 'off',
     'vue/html-indent': [
       'error',
-      4,
+      2,
       {
         attribute: 1,
         baseIndent: 1,
@@ -59,12 +59,15 @@ module.exports = defineConfig({
     // 强制使用驼峰命名
     'vue/component-name-in-template-casing': [
       'error',
-      'PascalCase',
+      'kebab-case',
       {
         registeredComponentsOnly: false,
         ignores: [],
       },
     ],
     '@typescript-eslint/no-var-requires': 'off',
+    'vue/valid-template-root': 'off',
+    'vue/no-multiple-template-root': 'off',
+    'no-tabs': 'off',
   },
 });
