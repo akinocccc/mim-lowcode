@@ -4,6 +4,7 @@
     "prepare": "husky install",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "lint": "eslint --fix --ext .js,.ts,.vue src",
+    "lint-staged": "lint-staged",
     "precommit": "lint-staged"
   },
   "devDependencies": {
@@ -32,12 +33,6 @@
         "eslint --fix",
         "git add"
       ]
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
