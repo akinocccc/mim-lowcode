@@ -14,8 +14,8 @@ node_modules
 *.local
 package-lock.json
 ./**/package-lock.json
-yarn.json
-./**/yarn.json
+yarn.lock
+./**/yarn.lock
 
 # Editor directories and files
 ./**/.vscode/*

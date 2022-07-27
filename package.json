@@ -26,6 +26,17 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,vue}": "eslint --cache --fix"
+    "linters": {
+      "**/*.{js,vue}": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
