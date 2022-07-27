@@ -1,1 +1,1 @@
-<template><layout /></template>
+<template><common-layout /></template>

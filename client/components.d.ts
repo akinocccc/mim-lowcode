@@ -7,6 +7,7 @@ export {};
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CommonLayout: typeof import('./src/components/common-layout.vue')['default'];
     ElAside: typeof import('element-plus/es')['ElAside'];
     ElAvatar: typeof import('element-plus/es')['ElAvatar'];
     ElButton: typeof import('element-plus/es')['ElButton'];
@@ -22,7 +23,6 @@ declare module '@vue/runtime-core' {
     ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup'];
     ElPopover: typeof import('element-plus/es')['ElPopover'];
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
-    Layout: typeof import('./src/components/layout.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
   }
