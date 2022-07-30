@@ -3,27 +3,7 @@
     <el-container>
       <el-header class="header" height="50px">
         <text>MiM低代码平台</text>
-        <div class="userinfo-wrapper">
-          <el-avatar
-            :size="35"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <el-dropdown>
-            <span class="el-dropdown-link">
-              <text>user</text>
-              <el-icon class="el-icon--right">
-                <arrow-down />
-              </el-icon>
-            </span>
-            <template #dropdown>
-              <el-dropdown-menu>
-                <el-dropdown-item>我的页面</el-dropdown-item>
-                <el-dropdown-item>修改密码</el-dropdown-item>
-                <el-dropdown-item divided>退出登录</el-dropdown-item>
-              </el-dropdown-menu>
-            </template>
-          </el-dropdown>
-        </div>
+        <user-info />
       </el-header>
       <el-container>
         <el-aside class="aside" width="64px">
@@ -56,8 +36,7 @@ import router from '../routers/index';
 export default {
   setup() {
     const routes: Array<any> = router.getRoutes();
-    console.log(routes);
-    const menuItems = routes.filter((item) => item.name && !item.meta.hideInMenu);
+    const menuItems = routes.filter((item) => item.name && !item.meta.hiddenInMenu);
     return {
       menuItems,
     };
@@ -66,28 +45,19 @@ export default {
 </script>
 
 <style lang="less">
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #121d33;
-  color: #fff;
-  .userinfo-wrapper {
+.common-layout {
+  color: #ffffff;
+  .header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    text {
-      margin-left: 10px;
-    }
-    .el-dropdown-link {
-      cursor: pointer;
-      color: #fff;
-    }
+    background-color: #121d33;
   }
-}
-.aside {
-  overflow: hidden !important;
-  height: 100%;
-  border-right: 1px solid #ccc;
-  background-color: #1c2538;
+  .aside {
+    overflow: hidden !important;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    background-color: #1c2538;
+  }
 }
 </style>

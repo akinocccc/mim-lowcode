@@ -56,12 +56,11 @@ module.exports = defineConfig({
     ],
     // 关闭此规则 使用 prettier 的格式化规则
     'vue/max-attributes-per-line': ['off'],
-    // 强制使用驼峰命名
     'vue/component-name-in-template-casing': [
       'error',
       'kebab-case',
       {
-        registeredComponentsOnly: false,
+        registeredComponentsOnly: true,
         ignores: [],
       },
     ],

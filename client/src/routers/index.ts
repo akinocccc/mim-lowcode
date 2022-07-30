@@ -1,3 +1,4 @@
+import { store } from '@/store';
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 const history = createWebHistory();
 const routes: Array<RouteRecordRaw> = [
@@ -18,5 +19,11 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history,
   routes,
+});
+router.beforeEach((to, from) => {
+  if (!store.state.isLogin) {
+    store.commit('SET_IS_SHOW_LOGIN_MODEL', true);
+    return false;
+  }
 });
 export default router;
