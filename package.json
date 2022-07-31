@@ -10,6 +10,9 @@
     "node"
   ],
   "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run start",
     "commit": "cz",
     "prepare": "husky install",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
@@ -23,6 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "commitizen": "^4.2.5",
+    "concurrently": "^7.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
@@ -44,5 +48,6 @@
       "eslint --fix",
       "git add"
     ]
-  }
+  },
+  "license": "MIT"
 }
