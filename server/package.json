@@ -1,12 +1,6 @@
 {
-  "name": "ts-koa-starter",
-  "version": "1.0.0",
-  "description": "一个简单的koa+typescript+typeorm的起手式",
-  "tags": [
-    "orm",
-    "typescript",
-    "koa"
-  ],
+  "name": "mim-server",
+  "version": "0.0.1",
   "scripts": {
     "start": "nodemon",
     "build": "rm -rf dist && tsc",

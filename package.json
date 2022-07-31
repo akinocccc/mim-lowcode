@@ -1,4 +1,14 @@
 {
+  "name": "mim-lowcode",
+  "version": "0.0.1",
+  "description": "a low code platform",
+  "tags": [
+    "lowcode",
+    "typescript",
+    "Vue",
+    "koa2",
+    "node"
+  ],
   "scripts": {
     "commit": "cz",
     "prepare": "husky install",
