@@ -9,16 +9,22 @@
     "stop": "npx pm2 stop ecosystem.config.js"
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
+    "koa-jwt": "^4.0.3",
     "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.21",
     "mongoose": "^6.5.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.48",
     "@types/koa-bodyparser": "^4.2.2",
     "@types/koa-router": "^7.0.40",
+    "@types/lodash": "^4.14.182",
     "@types/node": "^18.6.1",
     "nodemon": "^2.0.19",
     "pm2": "^5.2.0",

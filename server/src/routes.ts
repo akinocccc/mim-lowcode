@@ -1,9 +1,14 @@
-import homeController from './controller/home-controller';
+import userController from './controller/user-controller';
 
 export default [
   {
-    path: '/',
-    method: 'get',
-    action: homeController.hello,
+    path: '/register',
+    method: 'post',
+    action: userController.register,
+  },
+  {
+    path: '/login',
+    method: 'post',
+    action: userController.login,
   },
 ];
