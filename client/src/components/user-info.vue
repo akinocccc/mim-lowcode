@@ -1,12 +1,9 @@
 <template>
   <div v-if="isLogin" class="userinfo-wrapper">
-    <el-avatar
-      :size="35"
-      src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-    />
+    <el-avatar :size="35" :src="userInfo.avatar" />
     <el-dropdown>
       <span class="el-dropdown-link">
-        <text>user</text>
+        <Text>{{ userInfo.username }}</Text>
         <el-icon class="el-icon--right">
           <arrow-down />
         </el-icon>
@@ -15,32 +12,30 @@
         <el-dropdown-menu>
           <el-dropdown-item>我的页面</el-dropdown-item>
           <el-dropdown-item>修改密码</el-dropdown-item>
-          <el-dropdown-item divided>退出登录</el-dropdown-item>
+          <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
   </div>
   <div v-else class="login-link" @click="showLoginModel">登录</div>
-  <LoginModel v-show="isShowLoginModel" />
+  <LoginModel v-show="isShowUserModel" />
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useStore } from '@/store';
 
-export default {
-  setup() {
-    const store = useStore();
+const store = useStore();
 
-    const showLoginModel = () => {
-      store.commit('SET_IS_SHOW_LOGIN_MODEL', true);
-    };
+const isLogin = computed(() => store.state.isLogin);
+const isShowUserModel = computed(() => store.state.isShowUserModel);
+const userInfo = computed(() => store.state.userInfo);
 
-    return {
-      isLogin: store.state.isLogin,
-      isShowLoginModel: store.state.isShowLoginModel,
-      showLoginModel,
-    };
-  },
+const showLoginModel = () => {
+  store.commit('SET_IS_SHOW_USER_MODEL', true);
+};
+
+const logout = () => {
+  store.dispatch('logout');
 };
 </script>
 

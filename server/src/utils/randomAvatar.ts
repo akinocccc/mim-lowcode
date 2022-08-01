@@ -3,5 +3,5 @@ export default () => {
   const max = 6;
   const min = 1;
   const randomNum = Math.random() * (max - min) + min;
-  return `/avatar/avatar_${Math.floor(randomNum)}.png`;
+  return `/public/avatar/avatar_${Math.floor(randomNum)}.png`;
 };

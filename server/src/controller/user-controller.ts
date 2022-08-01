@@ -1,4 +1,5 @@
 import { isNil } from 'lodash';
+import auth from 'src/middleware/auth';
 import hash from 'src/utils/hash';
 import randomAvatar from 'src/utils/randomAvatar';
 const { sign } = require('jsonwebtoken');
@@ -30,11 +31,11 @@ class UserController {
 
   login = async (ctx: any) => {
     const user = ctx.request.body;
+    console.log(user);
     const ret = await this.service.getUserInfo(user.username);
     if (isNil(ret) === false && hash(user.password) === ret.password) {
-      const secret = '一段秘钥';
       const { _id, username, avatar } = ret;
-      const token = sign({ username }, secret, { expiresIn: '24h' });
+      auth.sign(ctx, { _id, username, avatar });
       ctx.body = {
         code: 0,
         msg: '登录成功',
@@ -42,7 +43,6 @@ class UserController {
           _id,
           username,
           avatar,
-          token,
         },
       };
     } else {

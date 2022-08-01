@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { ElMessage } from 'element-plus';
 import NProgress from 'nprogress';
-import { Message } from '@element-plus/icons-vue';
 
 interface ResType<T> {
   code: number;
@@ -43,19 +43,18 @@ axios.interceptors.request.use(
 // 响应拦截
 axios.interceptors.response.use(
   (res: AxiosResponse) => {
-    //发请求前做的一些处理，数据转化，配置请求头，设置token,设置loading等，根据需求去添加
-    switch (res.data.code) {
-      case 111:
-        sessionStorage.setItem('token', '');
-        return res;
-      case 200:
-        return JSON.stringify(res.data);
-      default:
-        return;
+    let type: 'success' | 'error' = 'success';
+    switch (res?.data?.code) {
+      case -1:
+        type = 'error';
     }
+    ElMessage({
+      message: res?.data?.msg,
+      type,
+    });
+    return res;
   },
   (error: AxiosError) => {
-    // 接收到异常响应的处理开始
     if (error && error.response) {
       // 1.公共错误处理
       // 2.根据响应码具体处理
@@ -103,13 +102,20 @@ axios.interceptors.response.use(
     } else {
       // 超时处理
       if (JSON.stringify(error).includes('timeout')) {
-        Message.error('服务器响应超时，请刷新当前页');
+        ElMessage({
+          message: '服务器响应超时，请刷新当前页',
+          type: 'error',
+        });
       }
-      Message.error('连接服务器失败');
+      ElMessage({
+        message: '连接服务器失败',
+        type: 'error',
+      });
     }
-    Message.error(error.message);
-    //处理结束
-    //如果不需要错误处理，以上的处理过程都可省略
+    ElMessage({
+      message: error.message,
+      type: 'error',
+    });
     return Promise.resolve(error.response);
   },
 );

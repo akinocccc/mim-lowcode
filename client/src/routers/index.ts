@@ -22,7 +22,7 @@ const router = createRouter({
 });
 router.beforeEach((to, from) => {
   if (!store.state.isLogin) {
-    store.commit('SET_IS_SHOW_LOGIN_MODEL', true);
+    store.commit('SET_IS_SHOW_USER_MODEL', true);
     return false;
   }
 });
