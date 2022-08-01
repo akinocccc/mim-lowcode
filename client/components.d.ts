@@ -8,6 +8,7 @@ export {};
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CommonLayout: typeof import('./src/components/common-layout.vue')['default'];
+    ComponentPanel: typeof import('./src/views/page-editor/page-components/component-panel.vue')['default'];
     ElAside: typeof import('element-plus/es')['ElAside'];
     ElAvatar: typeof import('element-plus/es')['ElAvatar'];
     ElButton: typeof import('element-plus/es')['ElButton'];
@@ -22,15 +23,27 @@ declare module '@vue/runtime-core' {
     ElHeader: typeof import('element-plus/es')['ElHeader'];
     ElIcon: typeof import('element-plus/es')['ElIcon'];
     ElInput: typeof import('element-plus/es')['ElInput'];
+    ElLink: typeof import('element-plus/es')['ElLink'];
     ElMain: typeof import('element-plus/es')['ElMain'];
     ElMenu: typeof import('element-plus/es')['ElMenu'];
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
     ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup'];
     ElPopover: typeof import('element-plus/es')['ElPopover'];
     ElRow: typeof import('element-plus/es')['ElRow'];
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar'];
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
+    ElTable: typeof import('element-plus/es')['ElTable'];
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
     LoginForm: typeof import('./src/components/login-form.vue')['default'];
     LoginModel: typeof import('./src/components/login-model.vue')['default'];
+    MyButton: typeof import('./src/views/page-editor/page-components/my-button.vue')['default'];
+    MyImg: typeof import('./src/views/page-editor/page-components/my-img.vue')['default'];
+    MyInput: typeof import('./src/views/page-editor/page-components/my-Input.vue')['default'];
+    MyLink: typeof import('./src/views/page-editor/page-components/my-link.vue')['default'];
+    MyTable: typeof import('./src/views/page-editor/page-components/my-table.vue')['default'];
+    MyText: typeof import('./src/views/page-editor/page-components/my-text.vue')['default'];
+    MyVideo: typeof import('./src/views/page-editor/page-components/my-video.vue')['default'];
+    PagePanel: typeof import('./src/views/page-editor/page-components/page-panel.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
     UserInfo: typeof import('./src/components/user-info.vue')['default'];
