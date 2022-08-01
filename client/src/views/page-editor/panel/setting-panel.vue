@@ -8,7 +8,6 @@
 .componentAttribute {
   min-width: 290px;
   height: 100%;
-  background-color: #121d33;
   border-left: 1px solid #ccc;
 }
 </style>

@@ -34,7 +34,6 @@ const beforeClone = (origin: componentsList) => {
   width: 260px;
   min-width: 260px;
   height: 100%;
-  background-color: #121d33;
   border-right: 1px solid #ccc;
   padding: 10px;
 

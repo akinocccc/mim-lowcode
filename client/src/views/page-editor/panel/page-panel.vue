@@ -51,12 +51,12 @@ const getComponentByTag = (tag: string) => {
 
 <style lang="less" scoped>
 .content {
-  padding: 20px !important;
+  height: 100%;
+  padding: 5px !important;
   .board {
     overflow: hidden;
     width: 100%;
     min-height: calc(100vh - 90px);
-    background-color: #121d33;
     padding: 20px;
     .drag {
       width: 100%;

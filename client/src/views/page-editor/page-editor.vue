@@ -35,7 +35,7 @@ onUnmounted(() => {
 <style lang="less" scoped>
 .pageEditor {
   display: flex;
-  height: 100%;
+  background-color: #1c2538;
   .component {
     width: 260px;
   }
