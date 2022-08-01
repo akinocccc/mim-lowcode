@@ -12,9 +12,24 @@ export default defineConfig({
     vue(),
     vueJsx(),
     AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+      ],
+      eslintrc: {
+        enabled: false, // Default `false`
+        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+      },
       resolvers: [ElementPlusResolver()],
+      imports: ['vue', 'vue-router'],
+      dts: './auto-import.d.ts',
     }),
     Components({
+      dirs: ['src/components', 'src/views/page-editor/page-components'],
+      extensions: ['vue'],
       resolvers: [ElementPlusResolver()],
     }),
   ],

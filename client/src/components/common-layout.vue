@@ -25,7 +25,7 @@
             </el-menu-item>
           </el-menu>
         </el-aside>
-        <el-main><router-view /></el-main>
+        <el-main class="main"><router-view /></el-main>
       </el-container>
     </el-container>
   </div>
@@ -52,6 +52,9 @@ export default {
     justify-content: space-between;
     align-items: center;
     background-color: #121d33;
+  }
+  .main {
+    padding: 0;
   }
   .aside {
     overflow: hidden !important;
