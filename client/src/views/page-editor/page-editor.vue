@@ -18,21 +18,17 @@ onUnmounted(() => {
 
 <template>
   <div class="pageEditor">
-    <el-container>
-      <el-aside width="260px">
-        <component-panel></component-panel>
-      </el-aside>
-      <el-container>
-        <el-main class="content">
-          <el-scrollbar :style="{ height: scrollHeight }" class="scrollbar">
-            <page-panel :height="scrollHeight"></page-panel>
-          </el-scrollbar>
-        </el-main>
-        <el-aside width="290px">
-          <setting-panel></setting-panel>
-        </el-aside>
-      </el-container>
-    </el-container>
+    <div class="component">
+      <component-panel></component-panel>
+    </div>
+    <div class="content">
+      <el-scrollbar :style="{ height: scrollHeight }" class="scrollbar">
+        <page-panel :height="scrollHeight"></page-panel>
+      </el-scrollbar>
+    </div>
+    <div class="setting">
+      <setting-panel></setting-panel>
+    </div>
   </div>
 </template>
 
@@ -40,8 +36,17 @@ onUnmounted(() => {
 .pageEditor {
   display: flex;
   height: 100%;
+  .component {
+    width: 260px;
+  }
+  .content {
+    flex: 1;
+  }
+  .setting {
+    width: 290px;
+  }
 }
-.content {
-  padding: 0px;
-}
+// .content {
+//   padding: 0px;
+// }
 </style>
