@@ -35,6 +35,18 @@ export default defineConfig({
   ],
   server: {
     open: true,
+    // 设置代理
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+      },
+      '/public': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/public/, ''),
+      },
+    },
   },
   resolve: {
     alias: {
