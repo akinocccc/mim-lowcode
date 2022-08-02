@@ -5,9 +5,9 @@ import mutations from './mutations';
 import actions from './actions';
 import getters from './getters';
 
-export const key: InjectionKey<Store<UserState>> = Symbol();
+export const key: InjectionKey<Store<IUserState>> = Symbol();
 
-export const store = createStore<UserState>({
+export const store = createStore<IUserState>({
   state,
   mutations,
   actions,

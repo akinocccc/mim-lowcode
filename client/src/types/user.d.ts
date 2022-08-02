@@ -1,16 +1,16 @@
-interface UserState {
+interface IUserState {
   isLogin: boolean;
   isShowUserModel: boolean;
-  userInfo: UserInfo;
+  userInfo: IUserInfo;
 }
 
-interface UserInfo {
+interface IUserInfo {
   _id: Number | null;
   username: string;
   avatar: string;
 }
 
-interface User {
+interface IUser {
   username: string;
   password: string;
 }
