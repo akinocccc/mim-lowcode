@@ -1,11 +1,11 @@
 export default {
-  SET_IS_LOGIN(state: IUserState, isLogin: boolean) {
-    localStorage.setItem('isLogin', isLogin.toString());
-    state.isLogin = isLogin;
+  SET_TOKEN(state: IUserState, token: string) {
+    localStorage.setItem('token', token);
+    state.token = token;
   },
-  SET_IS_SHOW_USER_MODEL(state: IUserState, isShowUserModel: boolean) {
-    localStorage.setItem('isShowUserModel', isShowUserModel.toString());
-    state.isShowUserModel = isShowUserModel;
+  SET_IS_SHOW_USER_MODAL(state: IUserState, isShowUserModal: boolean) {
+    localStorage.setItem('isShowUserModal', isShowUserModal.toString());
+    state.isShowUserModal = isShowUserModal;
   },
   SET_USER_INFO(state: IUserState, userInfo: IUserInfo) {
     localStorage.setItem('userInfo', JSON.stringify(userInfo));

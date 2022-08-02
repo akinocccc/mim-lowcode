@@ -36,7 +36,7 @@ declare module '@vue/runtime-core' {
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
     ElText: typeof import('element-plus/es')['ElText'];
     LoginForm: typeof import('./src/components/login-form.vue')['default'];
-    LoginModel: typeof import('./src/components/login-model.vue')['default'];
+    LoginModal: typeof import('./src/components/login-modal.vue')['default'];
     MyButton: typeof import('./src/views/page-editor/page-components/my-button.vue')['default'];
     MyImg: typeof import('./src/views/page-editor/page-components/my-img.vue')['default'];
     MyInput: typeof import('./src/views/page-editor/page-components/my-Input.vue')['default'];

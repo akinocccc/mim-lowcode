@@ -1,10 +1,10 @@
 <template>
   <el-dialog
-    v-model="store.state.isShowUserModel"
-    custom-class="user-model"
+    v-model="store.state.isShowUserModal"
+    custom-class="user-modal"
     title="MiM"
     width="30%"
-    :close-on-click-modal="false"
+    :close-on-click-model="false"
     :close-on-press-escape="false"
     :show-close="false"
     :center="true"
@@ -92,7 +92,7 @@ const onSubmit = async (form: FormInstance | undefined) => {
 </script>
 
 <style lang="less">
-.user-model {
+.user-modal {
   border-radius: 5px !important;
 
   .el-dialog__body {

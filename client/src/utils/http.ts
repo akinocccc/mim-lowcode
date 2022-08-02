@@ -1,3 +1,4 @@
+import { store } from './../store/index';
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { ElMessage } from 'element-plus';
 import NProgress from 'nprogress';
@@ -7,6 +8,7 @@ interface ResType<T> {
   data?: T;
   msg: string;
   err?: string;
+  token?: string;
 }
 
 interface Http {
@@ -27,11 +29,11 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
 //请求拦截器
 axios.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    const token = window.sessionStorage.getItem('token');
+    const token = window.localStorage.getItem('token');
     if (token) {
       config.headers = {
         ...config.headers,
-        token: token,
+        Authorization: `Bearer ${token}`,
       };
     }
     return config;
@@ -48,10 +50,12 @@ axios.interceptors.response.use(
       case -1:
         type = 'error';
     }
-    ElMessage({
-      message: res?.data?.msg,
-      type,
-    });
+    if (res?.data?.msg) {
+      ElMessage({
+        message: res?.data?.msg,
+        type,
+      });
+    }
     return res;
   },
   (error: AxiosError) => {
@@ -64,13 +68,13 @@ axios.interceptors.response.use(
           break;
         case 401:
           error.message = '未授权，请重新登录';
+          store.commit('SET_IS_SHOW_USER_MODAL', true);
           break;
         case 403:
           error.message = '拒绝访问';
           break;
         case 404:
           error.message = '请求错误,未找到该资源';
-          window.location.href = '/NotFound';
           break;
         case 405:
           error.message = '请求方法未允许';

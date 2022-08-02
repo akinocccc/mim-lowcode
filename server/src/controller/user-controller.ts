@@ -35,7 +35,7 @@ class UserController {
     const ret = await this.service.getUserInfo(user.username);
     if (isNil(ret) === false && hash(user.password) === ret.password) {
       const { _id, username, avatar } = ret;
-      auth.sign(ctx, { _id, username, avatar });
+      const token = auth.sign(ctx, { _id, username, avatar });
       ctx.body = {
         code: 0,
         msg: '登录成功',
@@ -44,6 +44,7 @@ class UserController {
           username,
           avatar,
         },
+        token,
       };
     } else {
       ctx.body = {

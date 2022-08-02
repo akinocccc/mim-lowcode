@@ -1,5 +1,5 @@
 export default {
-  isLogin: localStorage.getItem('isLogin') === 'true',
-  isShowUserModel: localStorage.getItem('isShowUserModel') === 'true',
+  token: localStorage.getItem('token') || '',
+  isShowUserModal: localStorage.getItem('isShowUserModal') === 'true',
   userInfo: JSON.parse(localStorage.getItem('userInfo') || '{}'),
 };

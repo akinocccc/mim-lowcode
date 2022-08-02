@@ -12,14 +12,14 @@ export default {
     const res = await login(user);
     if (res?.code === 0) {
       commit('SET_USER_INFO', res.data);
-      commit('SET_IS_LOGIN', true);
-      commit('SET_IS_SHOW_USER_MODEL', false);
+      commit('SET_TOKEN', res.token);
+      commit('SET_IS_SHOW_USER_MODAL', false);
     }
     return res;
   },
   logout({ commit }: ActionContext<{}, {}>) {
     commit('SET_USER_INFO', {});
-    commit('SET_IS_LOGIN', false);
-    commit('SET_IS_SHOW_USER_MODEL', true);
+    commit('SET_TOKEN', '');
+    commit('SET_IS_SHOW_USER_MODAL', true);
   },
 };

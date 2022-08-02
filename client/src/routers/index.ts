@@ -21,9 +21,9 @@ const router = createRouter({
   routes,
 });
 router.beforeEach((to, from) => {
-  if (!store.state.isLogin) {
-    store.commit('SET_IS_SHOW_USER_MODEL', true);
-    return false;
+  console.log(store.state);
+  if (store.state.token.length === 0) {
+    store.commit('SET_IS_SHOW_USER_MODAL', true);
   }
 });
 export default router;

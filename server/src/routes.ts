@@ -11,4 +11,9 @@ export default [
     method: 'post',
     action: userController.login,
   },
+  {
+    path: '/test',
+    method: 'get',
+    action: (ctx) => (ctx.body = {}),
+  },
 ];

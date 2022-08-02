@@ -1,6 +1,6 @@
 interface IUserState {
-  isLogin: boolean;
-  isShowUserModel: boolean;
+  token: string;
+  isShowUserModal: boolean;
   userInfo: IUserInfo;
 }
 

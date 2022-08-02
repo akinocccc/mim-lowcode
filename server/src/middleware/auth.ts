@@ -1,28 +1,32 @@
 const jwt = require('jsonwebtoken');
-const expiresIn = 60 * 60 * 24;
+const expiresIn = 5;
 const tokenName = 'token';
 const secret = 'secret';
 
 const auth = {
   sign: (ctx, userInfo) => {
     const token = jwt.sign(userInfo, secret, { expiresIn });
+    ctx.set('Authorization', `Bearer ${token}`);
     ctx.cookies.set(tokenName, token, {
       maxAge: expiresIn,
       httpOnly: true,
       sameSite: 'strict',
       secure: process.env.NODE_ENV === 'production',
     });
+    return token;
   },
 
-  verify: (ctx) => {
-    const token = ctx.cookies.get(tokenName);
+  verify: async (ctx, decodedToken, token) => {
+    console.log(token);
     if (!token) {
-      return null;
+      return true;
     }
     try {
-      return jwt.verify(token, secret);
+      const ret = jwt.verify(token, secret);
+      console.log(ret);
+      return ret.username.length <= 0;
     } catch (err) {
-      return null;
+      return true;
     }
   },
 };
