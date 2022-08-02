@@ -1,14 +1,14 @@
 import { ActionContext } from 'vuex';
 import { login, register } from './../api/user';
 export default {
-  async register({ commit }: ActionContext<{}, {}>, user: User) {
+  async register({ commit }: ActionContext<{}, {}>, user: IUser) {
     const res = await register(user);
     if (res?.code === 0) {
       commit('SET_USER_INFO', res.data);
     }
     return res;
   },
-  async login({ commit }: ActionContext<{}, {}>, user: User) {
+  async login({ commit }: ActionContext<{}, {}>, user: IUser) {
     const res = await login(user);
     if (res?.code === 0) {
       commit('SET_USER_INFO', res.data);
