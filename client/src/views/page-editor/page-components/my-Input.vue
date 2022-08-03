@@ -4,29 +4,34 @@ const props = defineProps({
     type: String,
     default: '请输入',
   },
+  clearable: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  size: {
+    type: String,
+    default: 'default',
+  },
 });
-const focusFunc = () => {
-  console.log(1);
-};
-const blur = () => {
-  console.log(2);
-};
-let char = ref('');
-const input = () => {
-  console.log(3);
-};
 </script>
 
 <template>
-  <div>
+  <div class="input">
     <el-input
-      v-model="char"
       :placeholder="placeholder"
-      @input="input"
-      @focus="focusFunc"
-      @blur="blur"
+      :clearable="clearable"
+      :disabled="disabled"
+      :size="size"
     ></el-input>
   </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.input {
+  width: 100% !important;
+}
+</style>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import ComponentPanel from './panel/component-panel.vue';
-import PagePanel from './panel/page-panel.vue';
-import SettingPanel from './panel/setting-panel.vue';
+import { log } from 'console';
+import ComponentPanel from './panel/component-panel/component-panel.vue';
+import PagePanel from './panel/page-panel/page-panel.vue';
+import SettingPanel from './panel/setting-panel/setting-panel.vue';
 
 const getHeight = () => {
   scrollHeight.value = window.innerHeight - 50 + 'px';
@@ -41,9 +42,10 @@ onUnmounted(() => {
   }
   .content {
     flex: 1;
+    width: calc(100vw - 64px - 240px - 320px) !important;
   }
   .setting {
-    width: 290px;
+    width: 300px;
   }
 }
 // .content {

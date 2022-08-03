@@ -9,10 +9,13 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CommonLayout: typeof import('./src/components/common-layout.vue')['default'];
     ComponentPanel: typeof import('./src/views/page-editor/page-components/component-panel.vue')['default'];
+    ComponentWrapper: typeof import('./src/views/page-editor/page-components/component-wrapper.vue')['default'];
+    CountComponent: typeof import('./src/components/countComponent.vue')['default'];
     ElAside: typeof import('element-plus/es')['ElAside'];
     ElAvatar: typeof import('element-plus/es')['ElAvatar'];
     ElButton: typeof import('element-plus/es')['ElButton'];
     ElCol: typeof import('element-plus/es')['ElCol'];
+    ElColorPicker: typeof import('element-plus/es')['ElColorPicker'];
     ElContainer: typeof import('element-plus/es')['ElContainer'];
     ElDialog: typeof import('element-plus/es')['ElDialog'];
     ElDropdown: typeof import('element-plus/es')['ElDropdown'];
@@ -28,12 +31,17 @@ declare module '@vue/runtime-core' {
     ElMenu: typeof import('element-plus/es')['ElMenu'];
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
     ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup'];
+    ElOption: typeof import('element-plus/es')['ElOption'];
     ElPopover: typeof import('element-plus/es')['ElPopover'];
     ElRow: typeof import('element-plus/es')['ElRow'];
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar'];
+    ElSelect: typeof import('element-plus/es')['ElSelect'];
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
+    ElSwitch: typeof import('element-plus/es')['ElSwitch'];
     ElTable: typeof import('element-plus/es')['ElTable'];
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
+    ElTabPane: typeof import('element-plus/es')['ElTabPane'];
+    ElTabs: typeof import('element-plus/es')['ElTabs'];
     ElText: typeof import('element-plus/es')['ElText'];
     LoginForm: typeof import('./src/components/login-form.vue')['default'];
     LoginModal: typeof import('./src/components/login-modal.vue')['default'];

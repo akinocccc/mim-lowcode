@@ -12,11 +12,26 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  mimWidth: {
+    type: String,
+    default: '',
+  },
+  mimHeight: {
+    type: String,
+    default: '',
+  },
 });
 </script>
 
 <template>
-  <img :src="src" alt="" srcset="" />
+  <div>
+    <img
+      :src="src"
+      :style="mimWidth || mimHeight ? { width: mimWidth + 'px', height: mimHeight + 'px' } : {}"
+      alt=""
+      srcset=""
+    />
+  </div>
 </template>
 
 <style lang="less" scoped></style>

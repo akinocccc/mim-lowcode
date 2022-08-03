@@ -4,6 +4,10 @@ interface IUserState {
   userInfo: IUserInfo;
 }
 
+interface TypeAllState extends IUserState {
+  editor: IEditorState;
+}
+
 interface IUserInfo {
   _id: Number | null;
   username: string;

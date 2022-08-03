@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import draggable from 'vuedraggable';
-import { componentList, componentsList } from '@/views/page-editor/component-import';
+import { componentList } from '@/views/page-editor/component-import';
 
-const beforeClone = (origin: componentsList) => {
+const beforeClone = (origin: IComponentsList): any => {
   const data = JSON.parse(JSON.stringify(origin));
-  data.id = Math.floor(Math.random() * 1000);
+  data.id = Math.floor(Math.random() * 100000);
   return data;
 };
 </script>

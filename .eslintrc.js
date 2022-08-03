@@ -34,7 +34,7 @@ module.exports = defineConfig({
     './client/.eslintrc-auto-import.json',
   ],
   rules: {
-    // 'no-undef': 'off',
+    'no-undef': 'off',
     // 禁止使用 var
     'no-var': 'error',
     semi: 'off',

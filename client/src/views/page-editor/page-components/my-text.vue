@@ -4,11 +4,28 @@ const props = defineProps({
     type: String,
     default: '这是一段文本',
   },
+  mimFontSize: {
+    type: Number,
+    default: 16,
+  },
+  mimFontWeight: {
+    type: Number,
+    default: 400,
+  },
+  mimColor: {
+    type: String,
+    default: '',
+  },
 });
 </script>
 
 <template>
-  <div>{{ text }}</div>
+  <p
+    class="text"
+    :style="{ fontSize: mimFontSize + 'px', fontWeight: mimFontWeight, color: mimColor }"
+  >
+    {{ text }}
+  </p>
 </template>
 
 <style lang="less" scoped></style>

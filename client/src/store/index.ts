@@ -4,6 +4,7 @@ import state from './state';
 import mutations from './mutations';
 import actions from './actions';
 import getters from './getters';
+import editor from './modules/editor';
 
 export const key: InjectionKey<Store<IUserState>> = Symbol();
 
@@ -12,11 +13,11 @@ export const store = createStore<IUserState>({
   mutations,
   actions,
   getters,
-  modules: {},
+  modules: { editor },
 });
 
-export function useStore() {
-  return baseUseStore(key);
+export function useStore<T = TypeAllState>() {
+  return baseUseStore<T>(key);
 }
 
 export function useGetters(mapper: any) {
