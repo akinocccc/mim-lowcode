@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const expiresIn = 5;
+const expiresIn = 60 * 60 * 24;
 const tokenName = 'token';
 const secret = 'secret';
 
