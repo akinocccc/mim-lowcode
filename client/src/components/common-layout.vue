@@ -25,7 +25,13 @@
             </el-menu-item>
           </el-menu>
         </el-aside>
-        <el-main class="main"><router-view /></el-main>
+        <el-main class="main">
+          <router-view v-slot="{ Component }">
+            <transition name="el-zoom-in-center" :duration="{ enter: 300, leave: 150 }">
+              <component :is="Component" />
+            </transition>
+          </router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -46,6 +52,7 @@ export default {
 
 <style lang="less">
 .common-layout {
+  background-color: #1c2538;
   color: #ffffff;
   .header {
     display: flex;
@@ -55,6 +62,7 @@ export default {
   }
   .main {
     padding: 0;
+    // background-color: #eeeeee;
   }
   .aside {
     overflow: hidden !important;
