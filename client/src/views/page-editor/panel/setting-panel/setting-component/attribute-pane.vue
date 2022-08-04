@@ -3,7 +3,7 @@ import { useStore } from '@/store';
 import Codemirror from 'codemirror-editor-vue3';
 
 // @types/codemirror
-import { Editor, EditorConfiguration } from 'codemirror';
+import { Editor, EditorConfiguration, Doc } from 'codemirror';
 
 // language
 import 'codemirror/mode/javascript/javascript.js';
@@ -56,16 +56,16 @@ onUpdated(() => {
 const save = () => {
   store.commit('editor/SET_BOARD_LIST', boardList);
 };
-let b = `const ary = []
-const b = []`;
-const code = ref(b);
 
 const cmOptions: EditorConfiguration = {
   mode: 'javascript',
   lineWrapping: true,
 };
-const onBlur = (value: Editor, cm: FocusEvent) => {
-  console.log('blur: ', code);
+const columnBlur = (cm: any, event: FocusEvent) => {
+  form.value.props.tableColumData = cm.doc.getValue();
+};
+const dataBlur = (cm: any, event: FocusEvent) => {
+  form.value.props.tableData = cm.doc.getValue();
 };
 </script>
 
@@ -145,17 +145,12 @@ const onBlur = (value: Editor, cm: FocusEvent) => {
     </el-form>
     <div v-if="form.props.hasOwnProperty('tableColumData')" class="code">
       <div class="code-label">表格列</div>
-      <codemirror
-        v-model:value="form.props.tableColumData"
-        :options="cmOptions"
-        border
-        @blur="save"
-      >
+      <codemirror :value="form.props.tableColumData" :options="cmOptions" border @blur="columnBlur">
       </codemirror>
     </div>
     <div v-if="form.props.hasOwnProperty('tableData')" class="code">
       <div class="code-label">表格数据</div>
-      <codemirror v-model:value="form.props.tableData" :options="cmOptions" border @blur="save">
+      <codemirror :value="form.props.tableData" :options="cmOptions" border @blur="dataBlur">
       </codemirror>
     </div>
 
@@ -180,6 +175,7 @@ const onBlur = (value: Editor, cm: FocusEvent) => {
   }
   .codemirror-container {
     width: 270px !important;
+    // width: 100%;
   }
 }
 </style>

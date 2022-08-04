@@ -1,7 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>333</h1>
+  <div class="event">
+    <h1>333</h1>
+  </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.event {
+  padding: 10px;
+}
+</style>

@@ -43,8 +43,10 @@ onUnmounted(() => {
 .setting {
   height: 100%;
   border-left: 1px solid #fff;
+  // padding: 5px;
   .demo-tabs {
     height: 100%;
+    width: 100%;
     :deep(.el-tabs__item) {
       color: #fff;
     }

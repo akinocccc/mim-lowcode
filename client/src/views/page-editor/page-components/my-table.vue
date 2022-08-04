@@ -32,7 +32,7 @@ let tableColumData = computed(() => eval(props.tableColumData));
 </script>
 
 <template>
-  <div>
+  <div class="table">
     <el-table :data="tableData" :border="border" :stripe="stripe" style="width: 100%">
       <el-table-column v-if="needIndex" type="index" width="50" />
       <el-table-column
@@ -45,4 +45,8 @@ let tableColumData = computed(() => eval(props.tableColumData));
   </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.table {
+  width: 100%;
+}
+</style>
