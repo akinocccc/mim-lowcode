@@ -366,7 +366,7 @@
 
 "@types/codemirror@^5.60.5":
   version "5.60.5"
-  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-5.60.5.tgz#5b989a3b4bbe657458cf372c92b6bfda6061a2b7"
+  resolved "https://registry.npmjs.org/@types/codemirror/-/codemirror-5.60.5.tgz#5b989a3b4bbe657458cf372c92b6bfda6061a2b7"
   integrity sha512-TiECZmm8St5YxjFUp64LK0c8WU5bxMDt9YaAek1UqUb9swrSCoJhh92fWu1p3mTEqlHjhB5sY7OFBhWroJXZVg==
   dependencies:
     "@types/tern" "*"
@@ -704,7 +704,7 @@ chokidar@^3.5.3:
 
 codemirror-editor-vue3@^2.1.7:
   version "2.1.7"
-  resolved "https://registry.yarnpkg.com/codemirror-editor-vue3/-/codemirror-editor-vue3-2.1.7.tgz#983c431605d50e0bef496adb7f5450c1c329b233"
+  resolved "https://registry.npmjs.org/codemirror-editor-vue3/-/codemirror-editor-vue3-2.1.7.tgz#983c431605d50e0bef496adb7f5450c1c329b233"
   integrity sha512-Pj4p9vacexMk6P1XEjxriHU/Xna4V/6+KzJbUE8lwxx0wbCrAopuCHSdJSKpsMWhYj/enkaNVFoIp1MAfvqTgw==
   dependencies:
     codemirror "^5.64.0"

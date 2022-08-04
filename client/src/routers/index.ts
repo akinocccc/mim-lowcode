@@ -15,13 +15,21 @@ const routes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/page-editor/page-editor.vue'),
   },
+  {
+    path: '/page_list',
+    name: 'page_list',
+    meta: {
+      title: '我的页面',
+      icon: 'list',
+    },
+    component: () => import('@/views/page-list/page-list.vue'),
+  },
 ];
 const router = createRouter({
   history,
   routes,
 });
 router.beforeEach((to, from) => {
-  console.log(store.state);
   if (store.state.token.length === 0) {
     store.commit('SET_IS_SHOW_USER_MODAL', true);
   }

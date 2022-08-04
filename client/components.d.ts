@@ -52,6 +52,7 @@ declare module '@vue/runtime-core' {
     MyTable: typeof import('./src/views/page-editor/page-components/my-table.vue')['default'];
     MyText: typeof import('./src/views/page-editor/page-components/my-text.vue')['default'];
     MyVideo: typeof import('./src/views/page-editor/page-components/my-video.vue')['default'];
+    PageContainer: typeof import('./src/components/page-container.vue')['default'];
     PagePanel: typeof import('./src/views/page-editor/page-components/page-panel.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
