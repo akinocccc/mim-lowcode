@@ -3,7 +3,7 @@
     <el-container>
       <el-header class="header" height="50px">
         <text>MiM低代码平台</text>
-        <user-info />
+        <!-- <user-info /> -->
       </el-header>
       <el-container>
         <el-aside class="aside" width="64px">

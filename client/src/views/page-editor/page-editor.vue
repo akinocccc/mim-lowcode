@@ -5,11 +5,11 @@ import PagePanel from './panel/page-panel/page-panel.vue';
 import SettingPanel from './panel/setting-panel/setting-panel.vue';
 
 const getHeight = () => {
-  scrollHeight.value = window.innerHeight - 50 + 'px';
+  scrollHeight.value = window.innerHeight - 60 + 'px';
 };
 let scrollHeight = ref('0px');
 onMounted(() => {
-  scrollHeight.value = window.innerHeight - 50 + 'px';
+  scrollHeight.value = window.innerHeight - 60 + 'px';
   window.addEventListener('resize', getHeight);
 });
 onUnmounted(() => {
@@ -42,7 +42,8 @@ onUnmounted(() => {
   }
   .content {
     flex: 1;
-    width: calc(100vw - 64px - 240px - 320px) !important;
+    overflow: hidden;
+    // width: calc(100vw - 64px - 240px - 320px) !important;
   }
   .setting {
     width: 300px;
