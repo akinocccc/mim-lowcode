@@ -1,11 +1,11 @@
-import { User } from 'src/utils/db';
+import { UserModel } from 'src/utils/db';
 
 export default class UserService {
   getUserInfo = async (username: string) => {
-    return await User.findOne({ username });
+    return await UserModel.findOne({ username });
   };
   addUser = async (username: string, password: string, avatar: string) => {
-    const ret = await User.create({ username, password, avatar });
+    const ret = await UserModel.create({ username, password, avatar });
     console.log(ret);
     return {
       _id: ret._id,

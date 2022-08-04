@@ -7,20 +7,30 @@ interface IUser {
   avatar: string;
 }
 
-// 2. Create a Schema corresponding to the document interface.
+interface IPage {
+  page_name: string;
+  components?: any;
+}
+
 const userSchema = new Schema<IUser>({
   username: { type: String, required: true },
   password: { type: String, required: true },
   avatar: { type: String, required: true },
 });
 
-// 3. Create a Model.
-export const User = model<IUser>('User', userSchema);
+export const UserModel = model<IUser>('User', userSchema);
+
+const pageSchema = new Schema<IPage>({
+  page_name: { type: String, required: true },
+  components: { type: Array, required: false },
+});
+
+export const PageModel = model<IPage>('Editor', pageSchema);
 
 run().catch((err) => console.log(err));
 
 async function run() {
-  // 4. Connect to MongoDB
+  // Connect to MongoDB
   await connect('mongodb://localhost:27017');
   console.log('db connected successfully');
 }
