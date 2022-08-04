@@ -4,7 +4,7 @@
 
 <style lang="less">
 .page-container {
-  width: 100%;
+  // width: 100%;
   // height: 100%;
   margin: 15px;
   padding: 15px;

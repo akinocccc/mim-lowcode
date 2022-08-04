@@ -62,7 +62,7 @@ export default {
   }
   .main {
     padding: 0;
-    // background-color: #eeeeee;
+    box-sizing: border-box;
   }
   .aside {
     overflow: hidden !important;
